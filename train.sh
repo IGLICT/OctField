@@ -9,18 +9,14 @@ python train_part.py    --exp_name 'chair' \
     --lr_decay_by 0.9 \
     --model_path models/
 
-python train.py \
+CUDA_VISIBLE_DEVICES=3 python train.py \
     --log_path logs \
-    --exp_name chair \
+    --part_pc_exp_name 'chair'\
+    --part_pc_model_epoch 0 \
+    --exp_name 'chair1' \
     --model_path models \
-    --data_source data \
-    --train_split 'example/chair.txt' \
-    --valdt_split 'example/chair.txt' \
+    --train_list 'example/chair.txt' \
+    --train_list 'example/chair.txt' \
     --epochs 10000 \
     --batch_size 16 \
-    --voxel_res 8 \
-    --loss_weight_center 20.0 \
-    --loss_weight_scale 20.0 \
-    --loss_weight_type 1.0 \
-    --loss_weight_if 20.0 \
-    --loss_weight_kldiv 0.05
+    --data_path 'example'  \

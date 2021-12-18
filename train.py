@@ -43,15 +43,6 @@ def train(conf):
     print(f'Object Category: {conf.category}')
     flog.write(f'Object Category: {conf.category}\n')
 
-    # control randomness
-    if conf.seed < 0:
-        conf.seed = random.randint(1, 10000)
-    print("Random Seed: %d" % (conf.seed))
-    flog.write(f'Random Seed: {conf.seed}\n')
-    random.seed(conf.seed)
-    np.random.seed(conf.seed)
-    jt.manual_seed(conf.seed)
-
     # save config
     jt.save(conf, os.path.join(conf.model_path, conf.exp_name, 'conf.pth'))
 
