@@ -14,7 +14,7 @@ CUDA_VISIBLE_DEVICES=3 python train.py \
     --part_pc_exp_name 'chair'\
     --part_pc_model_epoch 0 \
     --exp_name 'chair1' \
-    --model_path models \
+    --model_path model \
     --train_list 'example/chair.txt' \
     --train_list 'example/chair.txt' \
     --epochs 10000 \
