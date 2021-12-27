@@ -59,6 +59,7 @@ def get_npz_info(conf, model_path):
         f'normals_{conf.num_smp}_{conf.depth}_{conf.res}_{conf.overlap}_{conf.vres}.npy'
     )
     arr = np.load(npzfile)
+    voxels = np.load(voxels_npy).astype(np.int32)
     normals = np.load(avgnormals_npy).astype(np.float32)
     normals[np.isnan(normals)]=0
     normals[np.isinf(normals)]=0
